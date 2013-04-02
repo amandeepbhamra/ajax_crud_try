@@ -1,0 +1,15 @@
+<h1>Listing products</h1>
+<div id = 'products_div' >
+	<table id ='products_table' >
+	  	<tr>
+    		<th>Name</th>
+  		</tr>
+		<tbody id="products_body">
+			<% @products.each do |product| %>
+				<%= render 'products' , :product => product %>
+			<% end %>	
+		</tbody>
+	</table>
+	<br />
+</div>
+<%= link_to 'New Product', new_product_path , :remote => true, :id => 'new_product_link' %>
